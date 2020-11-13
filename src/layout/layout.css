@@ -1,0 +1,10 @@
+.inview-section-hidden {
+  margin: 0;
+  opacity: 0;
+}
+
+.inview-section-active {
+  transition: all 1500ms ease;
+  margin: 0;
+  opacity: 1;
+}
