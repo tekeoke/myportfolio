@@ -1,29 +1,48 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { PageProps } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Link } from 'gatsby';
+import React from 'react';
+import { ExternalLink, SEO, SideContents } from '../components';
 
-const NotFoundPage: React.FC<PageProps<GatsbyTypes.Page404Query>> = ({ data, location }) => {
-  const siteTitle = data.site!.siteMetadata!.title!
+import type { PageProps } from 'gatsby';
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="404: Not Found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
-  )
-}
+type Props = {
+  path: string;
+};
 
-export default NotFoundPage
+const Component: React.FC<Props> = ({ path }) => (
+  <div className='px-4 sm:px-16 lg:px-0 lg:grid lg:grid-cols-5 pb-12 mx-auto w-full'>
+    <div className='col-start-2 col-span-3'>
+      <h1 className='pt-4 mb-8 lg:py-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight break-all'>
+        404 NotFound
+      </h1>
+      <ul>
+        <li className='py-2'>
+          <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/'>
+            Home
+          </Link>
+        </li>
+        <li className='py-2'>
+          <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/posts'>
+            Posts
+          </Link>
+        </li>
+        <li className='py-2'>
+          <Link className='underline text-indigo-600 font-bold hover:opacity-50' to='/tags'>
+            Tags
+          </Link>
+        </li>
+      </ul>
+    </div>
+    <div className='lg:pl-4'>
+      <SideContents path={path} title='Posts' />
+    </div>
+  </div>
+);
 
-export const pageQuery = graphql`
-  query Page404 {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+const Container: React.FC<PageProps> = ({ path }) => (
+  <>
+    <SEO title='NotFound' pathname={path} />
+    <Component path={path} />
+  </>
+);
+
+export default Container;

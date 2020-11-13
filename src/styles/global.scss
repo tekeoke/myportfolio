@@ -1,0 +1,43 @@
+html {
+  // avoid slight content shift
+  height: initial;
+  body {
+    /*overscroll-behavior-y: none;*/
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: #20202f;
+  }
+}
+
+#footer {
+  min-height: 5rem;
+}
+
+@media screen and (max-width: 640px) {
+  #footer {
+    min-height: 4rem;
+  }
+}
+
+.custom-hatebu-button {
+  width: 32px;
+  height: 32px;
+  > a {
+    display: block;
+    font-weight: 700;
+    line-height: 32px;
+
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(
+      #00a5e0 0%,
+      #00a5e0 40%,
+      #008de1 60%,
+      #008de1 100%
+    );
+    border-radius: 50%;
+  }
+}
