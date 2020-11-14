@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "gatsby"
 import InViewMonitor from 'react-inview-monitor';
 import { ExternalLink } from '../../components';
+import { useAnyImage } from '../../hooks';
+import Img from "gatsby-image/withIEPolyfill"
 
 const json = {
   "myProducts": {
@@ -10,7 +12,7 @@ const json = {
               "title": "ポートフォリオ兼ブログ",
               "description": "自分自身のポートフォリオ兼技術ブログです。静的サイトジェネレータであるGatsby.jsを使用することで、読み込みの高速化を図っています。開発時に型による安全性と効率の高さを担保したかったため、TypeScriptをベースとして作成しています。",
               "url": "https://github.com/tekeoke",
-              "image": "/myportfolio.png"
+              "image": "myportfolio.png"
           }
       ]
   }
@@ -28,6 +30,8 @@ type productListProps = {
 };
 
 const ProductItem: React.FC<productProps> = ({ title, description, url, image }) => {
+  const projectImg = useAnyImage(image);
+
   return (
     <div className="flex">
       <div className="w-1/3 py-8">
@@ -47,7 +51,7 @@ const ProductItem: React.FC<productProps> = ({ title, description, url, image })
         </div>
       </div>
       <div className="mx-auto w-1/2 inline shadow-lg">
-        <img className="object-fill inline" src={image} alt="project" />
+        {projectImg && <Img objectFit="cover" fluid={projectImg} alt="project" />}
       </div>
     </div>
   )

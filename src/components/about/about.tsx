@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "gatsby"
 import InViewMonitor from 'react-inview-monitor';
 import { KeyPairKeyObjectResult } from 'crypto';
+import { useAnyImage } from '../../hooks';
+import Img from "gatsby-image/withIEPolyfill"
 
 const json = {
   "myProfile": {
@@ -16,16 +18,16 @@ const json = {
       "description": "AzureやAWSを基盤としたシステム基盤開発と、React.jsを利用したWeb開発が得意なエンジニアです。最近はReact.jsを利用したフロントエンド開発をベースに、Gatsby.jsに注目しています。参考書やUdemyを中心に学習しており、これからも色々な技術にチャレンジしていきたいと思っています。",
       "skills": [
           {
-              "name": "JavaScript",
+              "name": "React",
               "percentage": "90%"
           },
           {
               "name": "Azure",
-              "percentage": "90%"
+              "percentage": "70%"
           },
           {
-              "name": "Django",
-              "percentage": "80%"
+              "name": "CSS",
+              "percentage": "60%"
           }
       ]
   }
@@ -100,6 +102,8 @@ const Skill: React.FC<skillListProps> = ({skills}) => {
 }
 
 export const About = () => {
+  const iconImg = useAnyImage("myicon.png");
+
   return (
     <div className="flex items-center bg-pattern shadow-inner min-h-4/5">
       <div className="w-full py-6">
@@ -114,7 +118,7 @@ export const About = () => {
           <div className="flex">
             <div className="w-1/2">
               <h2 className="uppercase text-black font-bold text-3xl text-center">my profile</h2>
-              <img className="rounded-full mx-auto my-8" src="/myicon.png" width="128" height="128" alt="myicon"></img>
+              {iconImg ? <Img className="rounded-full mx-auto my-8 w-32 h-32" objectFit="cover" fluid={iconImg} alt="myicon" /> : <img className="rounded-full mx-auto my-8" src="/myicon.png" width="128" height="128" alt="myicon"></img>}
               <p className="text-black text-lg w-4/5 mx-auto py-8">
                 {json.myProfile.description}
               </p>

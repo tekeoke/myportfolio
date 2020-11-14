@@ -15,6 +15,10 @@ module.exports = {
         '4/5': '80vh',
         '9/10': '90vh',
         'full': '100vh',
+        'herofixed': '3rem',
+      },
+      maxHeight: {
+        'fix': '90%',
       }
     },
   },
