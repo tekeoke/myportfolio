@@ -33,8 +33,8 @@ const ProductItem: React.FC<productProps> = ({ title, description, url, image })
   const projectImg = useAnyImage(image);
 
   return (
-    <div className="flex">
-      <div className="w-1/3 py-8">
+    <div className="flex flex-wrap">
+      <div className="w-full lg:w-1/3 py-8">
         <h2 className="uppercase text-black font-bold text-2xl text-center">{title}</h2>
         <p className="text-black text-lg w-4/5 mx-auto py-4">
           {description}
@@ -50,9 +50,7 @@ const ProductItem: React.FC<productProps> = ({ title, description, url, image })
           </ExternalLink>
         </div>
       </div>
-      <div className="mx-auto w-1/2 inline shadow-lg">
-        {projectImg && <Img fluid={projectImg} alt="project" loading="eager" durationFadeIn={100} />}
-      </div>
+      {projectImg && <Img className="rounded-md mx-auto w-full lg:w-1/2 inline shadow-lg" objectFit="cover" fluid={projectImg} alt="project" loading="eager" durationFadeIn={100} />}
     </div>
   )
 }

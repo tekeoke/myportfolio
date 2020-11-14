@@ -86,6 +86,20 @@ InviewMonitor タグ内で使用している２つのクラスについて、CSS
 
 先ほどの about.tsx にこの CSS をインポートすることで、画面に要素が入ってきたらフェードインする仕組みが実現できます。
 
+## レスポンシブ対応
+
+tailwindcss を使用する場合、レスポンシブ対応の表記がとても簡単になります。
+
+キモは`w-full lg:w-1/3`の部分です。これは画面サイズが lg（PC 表示）のときは width を 1/3 にし、それ以下のときは width を full（100%）にします。
+通常の CSS だとメディアクエリを使用して記載するところですが、tailwindcss を使用することで以下のように相当すっきりします。
+
+```
+<div className="flex flex-wrap">
+  <div className="w-full lg:w-1/3 py-8" />
+  <Img className="rounded-md mx-auto w-full lg:w-1/2 inline shadow-lg" objectFit="cover" fluid={projectImg} alt="project" loading="eager" durationFadeIn={100} />
+</div>
+```
+
 ## ホスティングサービス
 
 デプロイ後のホスティングには Netlify を使用しています。AWS をよく利用しておりますので、S3 の静的ウェブサイトホスティングも候補でしたが、無料であることと GitHub のリポジトリを更新したら自動的に更新されるところが魅力的でしたので Netlify を採用しました。Netlify は独自ドメインを使用しないなら無料で利用できるのでかなりおすすめのサービスです。
