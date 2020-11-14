@@ -22,8 +22,8 @@ export const useAnyImage = (filename: string): FluidObject | undefined => {
         nodes {
           relativePath
           childImageSharp {
-            fluid(maxWidth: 1400, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
+            fluid(maxWidth: 1400, quality: 50) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }

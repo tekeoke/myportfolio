@@ -90,15 +90,17 @@ InviewMonitor タグ内で使用している２つのクラスについて、CSS
 
 tailwindcss を使用する場合、レスポンシブ対応の表記がとても簡単になります。
 
-キモは`w-full lg:w-1/3`の部分です。これは画面サイズが lg（PC 表示）のときは width を 1/3 にし、それ以下のときは width を full（100%）にします。
 通常の CSS だとメディアクエリを使用して記載するところですが、tailwindcss を使用することで以下のように相当すっきりします。
 
 ```
 <div className="flex flex-wrap">
-  <div className="w-full lg:w-1/3 py-8" />
-  <Img className="rounded-md mx-auto w-full lg:w-1/2 inline shadow-lg" objectFit="cover" fluid={projectImg} alt="project" loading="eager" durationFadeIn={100} />
+  <div className="w-full lg:w-1/2">{/*コンテンツ*/}</div>
+  <Img className="w-full lg:w-1/2" fluid={projectImg} alt="project" />
 </div>
 ```
+
+キモは`w-full lg:w-1/3`の部分です。
+この例だと、表示しているブラウザの横幅が 1024px のとき width=50%で表示し、横幅が 1024px 以下になったら width=100%で表示するように指定しています。
 
 ## ホスティングサービス
 
