@@ -11,7 +11,7 @@ const json = {
       "profile": {
           "Name": "てけおけ",
           "Address": "横浜",
-          "Email": "r.takaoka1991@gmail.com"
+          "Email": "rtakaoka1991@gmail.com"
       }
   },
   "mySkill": {
@@ -115,18 +115,18 @@ export const About = () => {
           <h1 className="uppercase font-bold text-6xl text-black text-center">
             about
           </h1>
-          <div className="flex">
-            <div className="w-1/2">
-              <h2 className="uppercase text-black font-bold text-3xl text-center">my profile</h2>
+          <div className="flex flex-wrap">
+            <div className="w-full lg:w-1/2">
+              <h2 className="uppercase text-black font-bold text-3xl text-center py-8">my profile</h2>
               {iconImg ? <Img className="rounded-full mx-auto my-8 w-32 h-32" objectFit="cover" fluid={iconImg} alt="myicon" loading="eager" durationFadeIn={100} /> : <img className="rounded-full mx-auto my-8" src="/myicon.jpg" width="128" height="128" alt="myicon"></img>}
-              <p className="text-black text-lg w-4/5 mx-auto py-8">
+              <p className="text-black text-lg w-4/5 mx-auto">
                 {json.myProfile.description}
               </p>
               <Profile profiles={json.myProfile.profile} />
             </div>
-            <div className="w-1/2">
-              <h2 className="uppercase text-black font-bold text-3xl text-center">my skills</h2>
-              <p className="text-black text-lg w-4/5 mx-auto py-8">
+            <div className="w-full lg:w-1/2">
+              <h2 className="uppercase text-black font-bold text-3xl text-center py-8">my skills</h2>
+              <p className="text-black text-lg w-4/5 mx-auto">
                 {json.mySkill.description}
               </p>
               <Skill skills={json.mySkill.skills} />
