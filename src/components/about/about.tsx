@@ -102,7 +102,7 @@ const Skill: React.FC<skillListProps> = ({skills}) => {
 }
 
 export const About = () => {
-  const iconImg = useAnyImage("myicon.png");
+  const iconImg = useAnyImage("myicon.jpg");
 
   return (
     <div className="flex items-center bg-pattern shadow-inner min-h-4/5">
@@ -118,7 +118,7 @@ export const About = () => {
           <div className="flex">
             <div className="w-1/2">
               <h2 className="uppercase text-black font-bold text-3xl text-center">my profile</h2>
-              {iconImg ? <Img className="rounded-full mx-auto my-8 w-32 h-32" objectFit="cover" fluid={iconImg} alt="myicon" /> : <img className="rounded-full mx-auto my-8" src="/myicon.png" width="128" height="128" alt="myicon"></img>}
+              {iconImg ? <Img className="rounded-full mx-auto my-8 w-32 h-32" objectFit="cover" fluid={iconImg} alt="myicon" loading="eager" durationFadeIn={100} /> : <img className="rounded-full mx-auto my-8" src="/myicon.jpg" width="128" height="128" alt="myicon"></img>}
               <p className="text-black text-lg w-4/5 mx-auto py-8">
                 {json.myProfile.description}
               </p>

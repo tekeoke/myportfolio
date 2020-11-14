@@ -12,7 +12,7 @@ const json = {
               "title": "ポートフォリオ兼ブログ",
               "description": "自分自身のポートフォリオ兼技術ブログです。静的サイトジェネレータであるGatsby.jsを使用することで、読み込みの高速化を図っています。開発時に型による安全性と効率の高さを担保したかったため、TypeScriptをベースとして作成しています。",
               "url": "https://github.com/tekeoke",
-              "image": "myportfolio.png"
+              "image": "myportfolio.jpg"
           }
       ]
   }
@@ -51,7 +51,7 @@ const ProductItem: React.FC<productProps> = ({ title, description, url, image })
         </div>
       </div>
       <div className="mx-auto w-1/2 inline shadow-lg">
-        {projectImg && <Img objectFit="cover" fluid={projectImg} alt="project" />}
+        {projectImg && <Img fluid={projectImg} alt="project" loading="eager" durationFadeIn={100} />}
       </div>
     </div>
   )

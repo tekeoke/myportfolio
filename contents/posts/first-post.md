@@ -6,7 +6,7 @@ tags:
   - React.js
   - TypeScript
   - tailwindcss
-cover: ../assets/gatsbyAndTypeScript.png
+cover: ../assets/gatsbyAndTypeScript.jpg
 ---
 
 こんにちは、てけおけです。今回は自分用のポートフォリオ兼ブログを作ったので、それに関して書いていこうと思います。特に何故その技術を採用したのかを主に書いてみます。

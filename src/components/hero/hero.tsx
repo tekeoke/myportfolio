@@ -9,7 +9,7 @@ export const Hero = () => {
 
   return (
     <div className="items-center bg-pattern shadow-inner w-full min-h-9/10">
-      {backgroundImg && <BackgroundImage fluid={backgroundImg}>
+      {backgroundImg && <BackgroundImage fluid={backgroundImg} loading="eager" durationFadeIn={100} >
         <div className="flex bg-black bg-opacity-50 bg-pattern shadow-inner items-center w-full min-h-9/10">
           <div className="w-full py-6">
             <section className="mx-auto container w-3/5 z-50">
