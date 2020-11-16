@@ -18,7 +18,7 @@ export const Hero = () => {
               </h1>
               <h2 className="text-white font-bold text-6xl">tekeoke</h2>
               <p className="text-white text-2xl w-3/5">
-                I’m a Software Engineer & Web Developer
+                I’m a System Engineer & Web Developer
               </p>
             </section>
           </div>

@@ -1,5 +1,5 @@
 ---
-date: 2020-09-23T23:56:00.000Z
+date: 2020-11-14T23:00:00.000Z
 title: Gatsby.jsとTypeScriptでポートフォリオ兼ブログを作った
 tags:
   - Gatsby.js
