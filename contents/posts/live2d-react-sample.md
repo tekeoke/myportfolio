@@ -1,5 +1,5 @@
 ---
-date: 2020-11-16T21:15:00.000Z
+date: 2020-11-16T21:30:00.000Z
 title: 'Live2D のモデルを React + TypeScript で動かす'
 tags:
   - React.js
@@ -465,6 +465,8 @@ export default App;
 以下のようにレンダリングされていれば完成です。
 
 ![結果画像](../assets/react-live2d-result.jpg)
+
+作成したアプリのリポジトリは[こちら](https://github.com/tekeoke/live2d-react-sample)です。
 
 # 参考
 
