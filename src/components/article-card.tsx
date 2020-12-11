@@ -1,4 +1,3 @@
-
 import { Link } from 'gatsby';
 import React from 'react';
 
@@ -11,7 +10,7 @@ export const ArticleCard: React.FC<Props> = ({ post: { excerpt, frontmatter, slu
         {frontmatter?.title}
       </h2>
     </Link>
-    <ul className='flex overflow-scroll'>
+    <ul className='flex overflow-auto'>
       {Array.from(new Set(frontmatter.tags)).map((tagName) => (
         <Link
           key={`${slug}/${tagName}`}
